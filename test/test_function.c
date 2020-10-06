@@ -6,8 +6,8 @@
 #define PROJECT_NAME "Function"
 
 /* Prototypes for all the test functions */
-void test_factorial(int);
-void test_prime(int);
+void test_simple(double,double,double);
+void test_compound(double,double,double);
 
 
 /* Start of the application test */
@@ -20,8 +20,8 @@ int main() {
 /* Note: Do not edit END */
 
 /* Add your test functions in this format for testing*/
-  CU_add_test(suite, "factorial_func", test_factorial);
-  CU_add_test(suite, "prime_func", test_prme);
+  CU_add_test(suite, "FindSimple", test_simple);
+  CU_add_test(suite, "FindCompound", test_compound);
 
 
 /* Note: Do not edit START*/
@@ -37,23 +37,23 @@ int main() {
   return 0;
 }
 /* Write all the test functions */
-void test_factorial(int) {
-  CU_ASSERT(3628800 == factorial_func(10));
-  CU_ASSERT(40320 == factorial_func(8));
-  CU_ASSERT(6 == factorial_func(3));
-  CU_ASSERT(5040 == factorial_func(7));
-  CU_ASSERT(720 == factorial_func(6));
+void FindSimple(double,double,double) {
+  CU_ASSERT(24000.000000== FindSimple(10000,10,24));
+  CU_ASSERT(10.000000 == FindSimple(100,10,1));
+  CU_ASSERT(20.000000 == FindSimple(200,10,1));
+  CU_ASSERT(30.000000 == FindSimple(300,10,1));
+  CU_ASSERT(48000.000000 == FindSimple(20000,10,24));
 
   /* Dummy fail*/
-  CU_ASSERT(100 == factorial_func(5));
+  CU_ASSERT(15.000000 == FindSimple(500,10,1));
 }
 
-void test_prime(int) {
-  CU_ASSERT(1 == prime_func(7));
-  CU_ASSERT(0 == prime_func(52));
-  CU_ASSERT(1 == prime_func(3));
-  CU_ASSERT(0 == prime_func(12));
+void FindCompound(double,double,double) {
+  CU_ASSERT(98497.326758== FindCompound(10000,10,24));
+  CU_ASSERT(110.000000  == FindCompound(100,10,1));
+  CU_ASSERT(220.000000  == FindCompound(200,10,1));
+  CU_ASSERT(330.000000 == FindCompound(300,10,1));
 
   /* Dummy fail*/
-  CU_ASSERT(0 == prime_func(6));
+  CU_ASSERT( 440.000000== FindCompound(500,10,1));
 }
