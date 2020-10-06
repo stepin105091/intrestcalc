@@ -2,9 +2,8 @@
 #define __FUNCTION_H__
 
 #include <stdio.h>
+double FindSimple(double principle,double rate,double time);
 
-void fibonacci_func(int fibonacci_limit);
-int factorial_func(int factorial_input);
-int prime_func(int prime_input);
+double FindCompound(double P, double R, double T);
 
 #endif
